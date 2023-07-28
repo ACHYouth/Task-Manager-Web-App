@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome, {{ session['username'] }}!</h1>
+    <h2>Tasks:</h2>
+    <ul>
+        {% for task in tasks %}
+        <li class="task-item">
+            <a href="{{ url_for('view_task', task_id=task[0]) }}">{{ task[2] }}</a> - Due: {{ task[5] }}
+            {% if task[6] == 0 %}
+                | Status: Not Completed |
+            {% else %}
+                | Status: Completed |
+            {% endif %}
+            {% if task[6] == 0 %}
+                <a href="{{ url_for('mark_completed', task_id=task[0]) }}">Mark Completed</a>
+            {% else %}
+                <a href="{{ url_for('undo_completed', task_id=task[0]) }}">Undo Completed</a>
+            {% endif %}
+            | <a href="{{ url_for('remove_task', task_id=task[0]) }}">Remove</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a class="add-task-link" href="{{ url_for('add_task') }}">Add New Task</a>
+    <a class="delete-account-link" href="{{ url_for('delete_account') }}">Delete Account</a>
+    <a class="logout-link" href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
