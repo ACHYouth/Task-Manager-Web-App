@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+.task-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.task-item a {
+    margin-right: 10px;
+}
+
+.task-item a:hover {
+    color: #0056b3;
+}
+
+.add-task-link,
+.logout-link,
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+.task-actions {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.task-actions a {
+    margin-right: 10px;
+}
+
+.task-actions {
+    display: inline-block;
+}
+
+.task-actions a {
+    margin-right: 10px;
+}
+
+/* Reduce the margin between the button and the separating line */
+.task-item a:not(:last-child) {
+    margin-right: 5px;
+}
